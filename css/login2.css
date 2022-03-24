@@ -1,0 +1,127 @@
+/*body{
+    background-image: url('https://images.unsplash.com/photo-1600420870295-5e00aac0be39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGxpYnJhcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60');
+    background-repeat: no-repeat;
+    background-size: 1300px 1000px;
+}*/
+
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.page{
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin:20px ;
+  }
+  
+  .fa-foot {
+    padding: 10px;
+    font-size: 30px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin:20px ;
+  }
+
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+.fa-facebook-foot{
+  background: #0b286d34;
+    color: white;
+}
+
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .signin{
+      margin-left: 200px;
+      color: black;
+  }
+  
+  .sign a:hover{
+      color:white;
+  }
+
+  .signin{ 
+      height: 20px;
+  }
+  .signin a:link {
+    color: black;
+    text-decoration: none;
+  }
+  .signin a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  .signin a:active {
+    color: white;
+    text-decoration: none;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    color:white;
+    margin-left: 950px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .fa-flickr {
+    background: blue;
+    color: white;
+  }
