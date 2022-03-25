@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <title>Automating PhD Applications- Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Rubik:400,700,700i' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href='style.css' />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <script src="js/moment.min.js"></script>
+    <script src="js/moment-timezone-with-data.min.js"></script>
+
+
+    <!--Dynamic time-->
+    <script type="text/javascript">
+        function showLocalTime(container, zoneString, formatString) {
+            var thisobj = this
+            this.container = document.getElementById(container)
+            this.localtime = moment.tz(new Date(), zoneString)
+            this.formatString = formatString
+            this.container.innerHTML = this.localtime.format(this.formatString)
+            setInterval(function () { thisobj.updateContainer() }, 1000) //update container every second
+        }
+
+        showLocalTime.prototype.updateContainer = function () {
+            this.localtime.second(this.localtime.seconds() + 1)
+            this.container.innerHTML = this.localtime.format(this.formatString)
+        }
+
+
+    </script>
+</head>
+
+<body class="page-template-onepage">
+
+    <!-- NavBar Section -->
+    <div class="site-wrapper">
+        <div class="doc-loader">
+            <img src="images/preloader.gif" alt="Automating Applications">
+        </div>
+        <header class="header-holder">
+            <div class="menu-wrapper center-relative relative">
+                <div class="header-logo">
+                    <a href="home.html">
+                        <img src="images/logo.png" alt="Automating Applications">
+                    </a>
+                </div>
+
+                <div class="menu-holder">
+                    <nav id="header-main-menu">
+                        <ul class="main-menu sm sm-clean">
+                            <li>
+                                <a href="home.html"><i class="fa fa-home"></i></a>
+                            </li>
+                            <li>
+                                <a href="profile.html"><i class="fa fa-user"></i> Profile</a>
+                            </li>
+                            <li>
+                                <a href="#status details"><i class="fa fa-thumb-tack"></i> Status
+                                    details</a>
+
+                            </li>
+                            <li>
+                                <a href="#notifications"><i class="fa fa-bell"></i> Notifications</a>
+                            </li>
+
+                            <li>
+                                <a><span id="spanDate"></span>
+                                    <script type="text/javascript">
+                                        var months =
+                                            ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                                                'August', 'September', 'October', 'November', 'December'];
+                                        var today = new Date();
+                                        document.getElementById("spanDate").innerHTML =
+                                            months[today.getMonth()] + " " + today.getDate() + ", " +
+                                            today.getFullYear();
+                                    </script>
+                                </a>
+                            </li>
+                            <li>
+                                <div style="color: white; font-family: 'Rubik'; font-size: 15px; margin: 14px"><span
+                                        id="ist"></span></div>
+                                <script type="text/javascript">
+
+                                    new showLocalTime("ist", "Asia/Kolkata", "hh:mm:ss A")
+
+                                </script>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <br><br><br>
+        <div data-aos="fade-up">
+
+            <!-- Application Progress Timeline Section -->
+            <div class="status details" id="status details"></div>
+            <div id="content" class="site-content center-relative">
+
+                <div id="home" class="section no-page-title">
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper">
+                            <section>
+                                <h2 style="color: black;">Current Application Status</h2>
+                                <br>
+                                <ol class="progress-bar">
+                                    <li class="is-complete"><span>Registeration</span></li>
+                                    <li class="is-active"><span>Basic & Personal Details</span></li>
+                                    <li><span>Educational Details & Documents</span></li>
+                                    <li><span>PhD Preferences</span></li>
+                                    <li><span>Written Exam</span></li>
+                                    <li><span>Exam Results</span></li>
+                                    <li><span>Interview</span></li>
+                                    <li><span>Interview Outcome</span></li>
+                                    <li><span>Final Verdict</span></li>
+
+                                </ol>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br><br><br>
+
+        <div data-aos="fade-up">
+
+            <!-- Application Form Submission Status Section -->
+            <div id="forms" class="section">
+                <div class="section-wrapper block content-1170 center-relative">
+                    <div class="content-wrapper">
+
+                        <div class="one_half ">
+                            <h2 style="color: black;">Status of the details provided</h2>
+
+                        </div>
+
+                        <div class="one_half last">
+                            <div class="forms-holder">
+
+                                <div class="form-holder">
+                                    <div class="form-percent">75%</div>
+                                    <div class="form-text">
+                                        <span>Educational Details</span>
+                                        <div class="form">
+                                            <div class="form-fill" data-fill="75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-holder">
+                                    <div class="form-percent">45%</div>
+                                    <div class="form-text">
+                                        <span>Documents Uploaded</span>
+                                        <div class="form">
+                                            <div class="form-fill" data-fill="45%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-holder">
+                                    <div class="form-percent">90%</div>
+                                    <div class="form-text">
+                                        <span>Course Preferences</span>
+                                        <div class="form">
+                                            <div class="form-fill" data-fill="90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <br><br>
+    <!-- Calendar to keep track of important events Section -->
+    <div data-aos="fade-up">
+        <div class="calendar" id="calendar"></div>
+        <div id="clients" class="section no-page-title">
+            <div class="section-wrapper block content-1170 center-relative">
+
+                <table class="calendrier">
+                    <caption class="image-caption">march</caption>
+
+                    <thead class="day">
+
+                        <tr class="week">
+                            <th scope="col"><abbr title="monday">Mon</abbr></th>
+                            <th scope="col"><abbr title="tuesday">Tue</abbr></th>
+                            <th scope="col"><abbr title="wednesday">Wed</abbr></th>
+                            <th scope="col"><abbr title="thursday">Thu</abbr></th>
+                            <th scope="col"><abbr title="friday">Fri</abbr></th>
+                            <th scope="col"><abbr title="saturday">Sat</abbr></th>
+                            <th scope="col"><abbr title="sunday">Sun</abbr></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col"><abbr title="monday"></abbr></th>
+                            <th scope="col"><abbr title="tuesday">1</abbr></th>
+                            <th scope="col"><abbr title="wednesday">2</abbr></th>
+                            <th scope="col"><abbr title="thursday">3</abbr></th>
+                            <th scope="col"><abbr title="friday">4</abbr></th>
+                            <th scope="col"><abbr title="saturday">5</abbr></th>
+                            <th scope="col"><abbr title="sunday"><span class="sunday">6</span></abbr></th>
+                        </tr>
+
+                        <tr>
+                            <th scope="col"><abbr title="monday">7</abbr></th>
+                            <th scope="col"><abbr title="tuesday">8</abbr></th>
+                            <th scope="col"><abbr title="wednesday">9</abbr></th>
+                            <th scope="col"><abbr title="thursday">10</abbr></th>
+                            <th scope="col"><abbr title="friday">11</abbr></th>
+                            <th scope="col"><abbr title="saturday">12</abbr></th>
+                            <th scope="col"><abbr title="sunday"><span class="sunday">13</span></abbr>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th scope="col"><abbr title="monday">14</abbr></th>
+                            <th scope="col"><abbr title="tuesday">15</abbr></th>
+                            <th scope="col"><abbr title="wednesday">16</abbr></th>
+                            <th scope="col"><abbr title="thursday">17</abbr></th>
+                            <th scope="col"><abbr title="friday">18</abbr></th>
+                            <th scope="col"><abbr title="saturday">19</abbr></th>
+                            <th scope="col"><abbr title="sunday"><span class="sunday">20</span></abbr>
+                        </tr>
+
+                        <tr>
+                            <th scope="col"><abbr title="monday">21</abbr></th>
+                            <th scope="col"><abbr title="tuesday">22</abbr></th>
+                            <th scope="col"><abbr title="wednesday">23</abbr></th>
+                            <th scope="col"><abbr title="thursday">24</abbr></th>
+                            <th scope="col"><abbr title="friday">25</abbr></th>
+                            <th scope="col"><abbr title="saturday"><span class="current">26</span></abbr>
+                            </th>
+                            <th scope="col"><abbr title="sunday"><span class="sunday">27</span></abbr>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th scope="col"><abbr title="monday">28</abbr></th>
+                            <th scope="col"><abbr title="tuesday">29</abbr></th>
+                            <th scope="col"><abbr title="wednesday">30</abbr></th>
+                            <th scope="col"><abbr title="thursday">31</abbr></th>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Quote Section -->
+    <div data-aos="fade-up">
+        <div class="section-wrapper block content-1170 center-relative">
+            <div class="content-wrapper">
+
+                “The basic problem is the confusion over what is permanent and what is
+                impermanent”
+                </p>
+                <p class="text-slide-name"> Sri Mata Amritanandamayi Devi</p>
+                <p class="text-slide-position">Chancellor</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br><br>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content center-relative">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="Amrita" />
+            </div>
+            <p>
+                Team no. 13 <br>
+                A Shivaani (CB.EN.U4CSE19401) <br>
+                Akash Hooda (CB.EN.U4CSE19406) <br>
+                Veerabhadram (CB.EN.U4CSE19421) <br>
+                Mihika Shrivastava (CB.EN.U4CSE19439 <br>
+                Rohit Ganesh (CB.EN.U4CSE19463)
+
+
+            </p>
+        </div>
+    </footer>
+
+
+    <!--Load JavaScript-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/tipper.js"></script>
+    <script src="js/jarallax.js"></script>
+    <script src="js/jarallax-element.min.js"></script>
+    <script src='js/imagesloaded.pkgd.js'></script>
+    <script src='js/jquery.fitvids.js'></script>
+    <script src='js/jquery.smartmenus.min.js'></script>
+    <script src='js/isotope.pkgd.js'></script>
+    <script src='js/jquery.sticky-kit.min.js'></script>
+    <script src='js/main.js'></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

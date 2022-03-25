@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <title>Automating PhD Applications- Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Rubik:400,700,700i' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href='style.css' />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <script src="js/moment.min.js"></script>
+    <script src="js/moment-timezone-with-data.min.js"></script>
+
+
+    <!--Dynamic time-->
+    <script type="text/javascript">
+        function showLocalTime(container, zoneString, formatString) {
+            var thisobj = this
+            this.container = document.getElementById(container)
+            this.localtime = moment.tz(new Date(), zoneString)
+            this.formatString = formatString
+            this.container.innerHTML = this.localtime.format(this.formatString)
+            setInterval(function () { thisobj.updateContainer() }, 1000) //update container every second
+        }
+
+        showLocalTime.prototype.updateContainer = function () {
+            this.localtime.second(this.localtime.seconds() + 1)
+            this.container.innerHTML = this.localtime.format(this.formatString)
+        }
+
+
+    </script>
+
+</head>
+
+<body class="page-template-onepage">
+    <header class="header-holder">
+        <div class="menu-wrapper center-relative relative">
+            <div class="header-logo">
+                <a href="home.html">
+                    <img src="images/logo.png" alt="Automating Applications">
+                </a>
+            </div>
+
+            <div class="menu-holder">
+                <nav id="header-main-menu">
+                    <ul class="main-menu sm sm-clean">
+                        <li>
+                            <a href="home.html"><i class="fa fa-home"> Home</i></a>
+                        </li>
+                        <li>
+                            <a href="profile.html"><i class="fa fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#status details"><i class="fa fa-thumb-tack"></i> Status details</a>
+
+                        </li>
+                        <li>
+                            <a href="#notifications"><i class="fa fa-bell"></i> Notifications</a>
+                        </li>
+
+                        <li>
+                            <a><span id="spanDate"></span>
+                                <script type="text/javascript">
+                                    var months =
+                                        ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                                            'August', 'September', 'October', 'November', 'December'];
+                                    var today = new Date();
+                                    document.getElementById("spanDate").innerHTML =
+                                        months[today.getMonth()] + " " + today.getDate() + ", " +
+                                        today.getFullYear();
+                                </script>
+                            </a>
+                        </li>
+                        <li>
+                            <div style="color: white; font-family: 'Rubik'; font-size: 15px; margin: 14px"><span
+                                    id="ist"></span></div>
+                            <script type="text/javascript">
+
+                                new showLocalTime("ist", "Asia/Kolkata", "hh:mm:ss A")
+
+                            </script>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </header>
+
+    <div id="content" class="site-content center-relative">
+        <br><br><br><br>
+        <!-- About Section -->
+        <div id="about" class="section">
+            <div class="section-wrapper block content-1170 center-relative">
+                <div class="content-wrapper">
+
+                    <div class="one_half">
+                        <p class="title-description-up">
+                            BASIC DETAILS
+                        </p>
+                        <h3 style="color:black;">
+                            First Name<br>
+                            Last Name
+                        </h3>
+                        <p>
+                        <ul style="list-style-type:none;">
+                            <li>
+                                Email id: <p style="color:black;">firstname@abcd.com</p>
+                            </li>
+                            <li>
+                                Contact Number: <p style="color:black;"> xxxxxxxxxx </p>
+                            </li>
+                            <li>
+                                DOB: <p style="color:black;">01-01-1998</p>
+                            </li>
+                            <li>
+                                Gender: <p style="color:black;"> Male/Female/Others </p>
+                            </li>
+                            <li>
+                                Citizenship: <p style="color:black;">Indian</p>
+                            </li>
+                            <li>
+                                Highest Level of Education: <p style="color:black;">Masters in Technology</p>
+                            </li>
+                            <li>
+                                Graduating Institution Name: <p style="color:black;">xxx</p>
+                            </li>
+                            <li>
+                                Graduation Year: <p style="color:black;">yyyy</p>
+                            </li>
+                        </ul>
+                        </p>
+                        <br>
+                        <button class="button button1">
+                            <a href="" class="button">
+                                SUBMITTED DOCUMENTS
+                            </a>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div style="float: left">
+                    <img src="images/dummy user image.jpg" alt="" width="500">
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    </div>
+    <br><br>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content center-relative">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="Amrita" />
+            </div>
+            <p>
+                Team no. 13 <br>
+                A Shivaani (CB.EN.U4CSE19401) <br>
+                Akash Hooda (CB.EN.U4CSE19406) <br>
+                Veerabhadram (CB.EN.U4CSE19421) <br>
+                Mihika Shrivastava (CB.EN.U4CSE19439)<br>
+                Rohit Ganesh (CB.EN.U4CSE19463)
+
+
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
