@@ -1,91 +1,57 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-grid.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-reboot.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/login2.css') }}">
+  <link rel="stylesheet" href="../static/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../static/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/login2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
 <body>
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark row-4 " style="height:80px">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <div class="alert alert-primary" role="alert">
-    <p>{{ message }}</p>
-  </div>
   <!-- body -->
-  <form action="/" method="post">
-    <div class='page'>
-      <h2 style="margin-left:300px;color:black">SignIn</h2>
-      <div class='container border border-success ' style="margin-left:300px;width:500px">
-        <div class="mb-3">
-          <label htmlFor="name" class="form-label">User Name</label>
-          <input type="text" class="form-control" id="name" placeholder="name" name="name" required />
-        </div>
-        <div class="mb-3">
-          <label htmlFor="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required />
-        </div>
-        <div class="mb-3">
-          <label htmlFor="password1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password1" name="password1" required />
-          <label htmlFor="password2" class="form-label">Re-enter the password</label>
-          <input type="password" class="form-control" id="password2" name="password2" required />
-          <br />
-          <div style="display:flex">
-            <button type="submit" class="btn btn-outline-success ">SignIn</button>
-            <p class='signin'><a class='sign' href="{{ url_for('login') }}">Login here</a></p>
+  <div id="bg"></div>
+  <div class='page'>
+    <div class="row justify-content-md-center">
+      <h2 class="col col-md-4" style="color:black">Sign Up</h2>
+    </div>
+    <form action="/" method="post">
+      <div class="row justify-content-md-center">
+        <div class='container  col col-md-10' style="width:500px;box-shadow: black;">
+          <div class="mb-3">
+            <label htmlFor="name" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="name" placeholder="name" name="name" required />
+          </div>
+          <div class="mb-3">
+            <label htmlFor="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required />
+          </div>
+          <div class="mb-3">
+            <label htmlFor="password1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" required />
+            <label htmlFor="password2" class="form-label">Re-enter the password</label>
+            <input type="password" class="form-control" id="password2" name="password2" required />
+            <br />
+            <div style="display:flex">
+              <button type="submit" class="btn btn-success ">Sign In</button>
+              <p class='signin'><a class='sign' href="{{ url_for('login') }}">Login here</a></p>
+            </div>
           </div>
         </div>
       </div>
-  </form>
-  <div style="display:flex;margin-left:390px">
-    <a href="#" class="fa fa-google"></a>
-    <a href="#" class="fa fa-linkedin "></a>
-    <a href="#" class="fa fa-facebook"></a>
-  </div>
-  </div>
-
-  <!-- footer -->
-
-  <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">
-    <div class="col-md-10 d-flex align-items-center justify-content-center" style="margin-left:10px">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        home
-      </a>
-      <span class="text-muted">© 2021 Company, Inc</span>
+    </form>
+    <div class="row justify-content-md-center">
+      <div style="display:flex;" class="col col-md-4">
+        <a href="#" class="fa fa-google"></a>
+        <b>OR</b>
+        <a href="#" class="fa fa-linkedin "></a>
+      </div>
     </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-
-
-    </ul>
-  </footer> -->
-  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 
 </body>
 
