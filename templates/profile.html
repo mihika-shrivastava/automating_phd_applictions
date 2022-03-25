@@ -6,13 +6,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href='https://fonts.googleapis.com/css?family=Rubik:400,700,700i' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href='style.css' />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href='{{ url_for("static", filename="css/fonts.css") }}' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href='{{ url_for("static", filename="css/style.css") }}' />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}" />
+    <link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet">
 
-    <script src="js/moment.min.js"></script>
-    <script src="js/moment-timezone-with-data.min.js"></script>
+    <script src="{{ url_for('static', filename='js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/moment-timezone-with-data.min.js') }}"></script>
 
 
     <!--Dynamic time-->
@@ -41,7 +41,7 @@
         <div class="menu-wrapper center-relative relative">
             <div class="header-logo">
                 <a href="home.html">
-                    <img src="images/logo.png" alt="Automating Applications">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Automating Applications">
                 </a>
             </div>
 
@@ -145,7 +145,7 @@
 
 
                 <div style="float: left">
-                    <img src="images/dummy user image.jpg" alt="" width="500">
+                    <img src="{{ url_for('static', filename='images/dummy user image.jpg') }}" alt="" width="500">
                 </div>
             </div>
             <div class="clear"></div>
@@ -158,7 +158,7 @@
     <footer class="footer">
         <div class="footer-content center-relative">
             <div class="footer-logo">
-                <img src="images/logo.png" alt="Amrita" />
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Amrita" />
             </div>
             <p>
                 Team no. 13 <br>

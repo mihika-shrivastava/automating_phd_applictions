@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, render_template, request, url_for, redirect, session
 import pymongo as pym
 import bcrypt as bc
@@ -9,10 +10,13 @@ client = pym.MongoClient(
 db = client.get_database('test')
 reg = db.reg_details
 
-email_in_session = ""
-
 
 @app.route("/", methods=['post', 'get'])
+def index():
+    return render_template('profile.html')
+
+
+@app.route("/signin", methods=['post', 'get'])
 def signin():
     message = ''
     if "email" in session:
@@ -44,8 +48,7 @@ def signin():
 
             user_data = reg.find_one({'email': email})
             new_email = user_data['email']
-            email_in_session = new_email
-            return render_template('land.html', email=email_in_session)
+            return render_template('land.html', email=new_email)
     return render_template('signin.html')
 
 
@@ -53,12 +56,11 @@ def signin():
 def login():
     message = 'Please login to your account'
     if "email" in session:
-        return render_template('land.html', email=email_in_session)
+        return render_template('land.html')
 
     if request.method == "POST":
         username = request.form.get("name")
         email = request.form.get("email")
-        email_in_session = email
         password = request.form.get("password")
         name_found = reg.find_one({"name": username})
         email_found = reg.find_one({"email": email})
@@ -81,9 +83,9 @@ def login():
     return render_template('login.html', message=message)
 
 
-@app.route("/logged_in")
+@app.route("/dashboard")
 def logged_in():
-    return render_template('land.html')
+    return render_template('home.html')
 
 
 if __name__ == "__main__":

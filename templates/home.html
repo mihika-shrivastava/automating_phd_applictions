@@ -6,13 +6,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href='https://fonts.googleapis.com/css?family=Rubik:400,700,700i' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href='style.css' />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href='{{ url_for("static", filename="css/fonts.css") }}' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/aos.css") }}' />
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/font-awesome.css") }}'>
+    <link rel="stylesheet" type="text/css" href='{{ url_for("static", filename="css/style.css") }}' />
 
-    <script src="js/moment.min.js"></script>
-    <script src="js/moment-timezone-with-data.min.js"></script>
+    <script src="{{ url_for('static', filename='js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/moment-timezone-with-data.min.js') }}"></script>
 
 
     <!--Dynamic time-->
@@ -40,13 +40,13 @@
     <!-- NavBar Section -->
     <div class="site-wrapper">
         <div class="doc-loader">
-            <img src="images/preloader.gif" alt="Automating Applications">
+            <img src="{{ url_for('static', filename='images/preloader.gif')}}" alt="Automating Applications">
         </div>
         <header class="header-holder">
             <div class="menu-wrapper center-relative relative">
                 <div class="header-logo">
                     <a href="home.html">
-                        <img src="images/logo.png" alt="Automating Applications">
+                        <img src="{{ url_for('static', filename='images/logo.png')}}" alt="Automating Applications">
                     </a>
                 </div>
 
@@ -305,7 +305,7 @@
     <footer class="footer">
         <div class="footer-content center-relative">
             <div class="footer-logo">
-                <img src="images/logo.png" alt="Amrita" />
+                <img src="{{ url_for('static', filename='images/logo.png')}}" alt="Amrita" />
             </div>
             <p>
                 Team no. 13 <br>
@@ -313,7 +313,7 @@
                 Akash Hooda (CB.EN.U4CSE19406) <br>
                 Veerabhadram (CB.EN.U4CSE19421) <br>
                 Mihika Shrivastava (CB.EN.U4CSE19439 <br>
-                Rohit Ganesh (CB.EN.U4CSE19463)
+                Rohit Sarma (CB.EN.U4CSE19463)
 
 
             </p>
@@ -322,18 +322,18 @@
 
 
     <!--Load JavaScript-->
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/tipper.js"></script>
-    <script src="js/jarallax.js"></script>
-    <script src="js/jarallax-element.min.js"></script>
-    <script src='js/imagesloaded.pkgd.js'></script>
-    <script src='js/jquery.fitvids.js'></script>
-    <script src='js/jquery.smartmenus.min.js'></script>
-    <script src='js/isotope.pkgd.js'></script>
-    <script src='js/jquery.sticky-kit.min.js'></script>
-    <script src='js/main.js'></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tipper.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jarallax.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jarallax-element.min.js')}}"></script>
+    <script src='{{ url_for("static", filename="js/imagesloaded.pkgd.js")}}'></script>
+    <script src='{{ url_for("static", filename="js/jquery.fitvids.js")}}'></script>
+    <script src='{{ url_for("static", filename="js/jquery.smartmenus.min.js")}}'></script>
+    <script src='{{ url_for("static", filename="js/isotope.pkgd.js")}}'></script>
+    <script src='{{ url_for("static", filename="js/jquery.sticky-kit.min.js")}}'></script>
+    <script src='{{ url_for("static", filename="js/main.js")}}'></script>
+    <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
     <script>
         AOS.init();
     </script>
