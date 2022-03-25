@@ -1,0 +1,627 @@
+/*------------------------------------------------------------------
+[Table of contents]
+1. Importing CSS libraries from URLs
+2. For the Calendar
+
+-------------------------------------------------------------------*/
+
+
+/* ======================================
+    1. Importing CSS libraries from URLs
+========================================= */
+
+@import url("css/clear.css");
+@import url("css/font-awesome.min.css");
+@import url("css/sm-clean.css");
+@import url("css/owl.carousel.min.css");
+@import url("css/owl.theme.default.min.css");
+@import url("css/common.css");
+
+/* ======================================
+    2. Body 
+========================================= */
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    line-height: 35px;
+    font-weight: 400;
+    color: #b3b3b3;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* navbar items turn green on hover */
+body a {
+    text-decoration: none;
+    color: #53a318;
+    transition: color 0.3s ease;
+}
+
+body a:hover {
+    color: #53a318;
+}
+
+.content-1170 {
+    width: 1170px;
+}
+
+
+.section-wrapper {
+    position: relative;
+    padding: 50px px 0;
+}
+
+/* ======================================
+    3. For the Calendar
+    inspired by https://codepen.io/bemaxdesign/pen/AeKBQq
+========================================= */
+
+table {
+    width: 100%;
+}
+
+.calendrier {
+    font-family: 'Rubik';
+    width: 100%;
+    height: 50%;
+    background-color: #ffffff;
+}
+
+.calendrier caption {
+    background-color: #53a318;
+    padding: 20px 10px 20px 20px;
+    color: white;
+    text-align: left;
+    font-size: 35px;
+    color: black;
+}
+
+.week {
+    color: #53a318;
+    text-transform: uppercase;
+
+}
+.sunday {
+    color: grey;
+}
+.calendrier th {
+    padding: 10px;
+    color: black;
+}
+.current {
+    background: #53a318;
+    border-radius: 100%;
+    padding: 8px
+}
+
+/* ======================================
+    4. Loding Page
+========================================= */
+.doc-loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: #000;
+
+}
+
+.doc-loader img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ======================================
+    5. Global Header Logo + NavBar
+========================================= */
+.header-holder {
+    z-index: 99 !important;
+    background-color: #060606;
+    width: 100% !important;
+    top: 0;
+    position: fixed;
+    -webkit-transform: translateZ(0);
+}
+
+.sticky-wrapper {
+    height: 77px !important;
+}
+
+.menu-wrapper {
+    width: 98%;
+    max-width: 1450px;
+    min-height: 77px;
+}
+
+.header-logo {
+    line-height: 0;
+    font-size: 0;
+    float: left;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.header-logo img {
+    width: 190px;
+    height: 55.2px;
+}
+
+.menu-holder {
+    float: right;
+    max-width: 85%;
+}
+
+#header-main-menu {
+    display: inline-block;
+}
+
+
+.sm-clean a,
+.sm-clean a:hover,
+.sm-clean a:focus,
+.sm-clean a:active {
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 15px;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.sm-clean ul a,
+.sm-clean ul a:hover,
+.sm-clean ul a:focus,
+.sm-clean ul a:active {
+    font-size: 13px;
+    line-height: 15px;
+    padding: 10px !important;
+}
+
+.sm-clean {
+    background-color: transparent;
+    padding: 15px 0;
+}
+
+body .sm-clean a:hover,
+body .main-menu.sm-clean .sub-menu li a:hover,
+body .sm-clean li.active a,
+body .sm-clean li.current-page-ancestor > a,
+body .sm-clean li.current_page_ancestor > a,
+body .sm-clean li.current_page_item > a {
+    color: #53a318;
+}
+
+.sm-clean li {
+    margin-right: 10px;
+}
+
+.sm-clean li:last-child {
+    margin-right: 0;
+}
+
+.sm-clean ul {
+    background-color: #000;
+}
+
+.sm-clean a.has-submenu {
+    padding-right: 24px;
+}
+
+.sub-menu a,
+.children a {
+    padding-left: 15px !important;
+}
+
+.sub-menu .sub-menu,
+.children .children {
+    padding-top: 8px;
+}
+
+.sub-menu .sub-menu a,
+.children .children a,
+.sub-menu .sub-menu a:hover,
+.children .children a:hover {
+    padding-top: 10px !important;
+}
+
+@media(min-width: 925px) {
+
+    .sm-clean ul a span.sub-arrow {
+        margin-top: 0;
+    }
+    .sm-clean ul {
+        padding: 8px 0;
+    }
+}
+
+@media(max-width: 925px) {
+
+    .sm-clean ul {
+        background-color: #fff;
+    }
+
+}
+
+/* ===================================
+    6. General Section CSS
+====================================== */
+
+.section {
+    position: relative;
+}
+
+.page-title-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #53a318;
+    width: 285px;
+    display: inline-block;
+    z-index: 98;
+    height: 130px;
+}
+
+.page-title-holder:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 130px 60px 0 0;
+    border-color: #53a318 transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.section h3.entry-title {
+    font-size: 16px;
+    line-height: 149%;
+    font-weight: 400;
+    word-break: break-word;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-top: 32px;
+}
+
+.page .page-content {
+    background-color: #fff;
+    padding: 75px;
+}
+
+.no-padding .section-wrapper {
+    padding: 0 !important;
+    width: 100%;
+    max-width: 100%;
+}
+
+[data-jarallax-element] {
+    z-index: 30 !important;
+}
+
+.medium-text {
+    color: #000;
+    font-size: 60px;
+    line-height: 120%;
+    font-weight: 700;
+    padding-bottom: 35px;
+}
+
+/* ======================================
+    7. Button
+========================================= */
+.button {
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.button1 {
+    background-color: #4CAF50;
+}
+
+/* ======================================
+    8. Progress bar
+========================================= */
+
+:root
+    {
+        --color-white: #fff;
+        --color-black: #333;
+        --color-gray: #75787b;
+        --color-gray-light: #bbb;
+        --color-gray-disabled: #e8e8e8;
+        --color-green: #53a318;
+        --color-green-dark: #383;
+        --font-size-small: 0.75rem;
+        --font-size-default: 0.875rem;
+    }
+
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+    .progress-bar {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem;
+    }
+    .progress-bar li {
+        flex: 2;
+        position: relative;
+        padding: 0 0 14px;
+        font-size: var(--font-size-default);
+        line-height: 1.5;
+        color: var(--color-green);
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: visible;
+        min-width: 0;
+        text-align: center;
+        border-bottom: 2px solid var(--color-gray-disabled);
+    }
+    .progress-bar li:first-child,
+    .progress-bar li:last-child {
+        flex: 1;
+    }
+    .progress-bar li:last-child {
+        text-align: right;
+    }
+    .progress-bar li:before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-gray-disabled);
+        border-radius: 50%;
+        border: 2px solid var(--color-white);
+        position: absolute;
+        left: calc(50% - 6px);
+        bottom: -7px;
+        z-index: 3;
+        transition: all 0.2s ease-in-out;
+    }
+    .progress-bar li:first-child:before {
+        left: 0;
+    }
+    .progress-bar li:last-child:before {
+        right: 0;
+        left: auto;
+    }
+    .progress-bar span {
+        transition: opacity 0.3s ease-in-out;
+    }
+    .progress-bar li:not(.is-active) span {
+        opacity: 0;
+    }
+    .progress-bar .is-complete:not(:first-child):after,
+    .progress-bar .is-active:not(:first-child):after {
+        content: "";
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: -2px;
+        left: -50%;
+        z-index: 2;
+        border-bottom: 2px solid var(--color-green);
+    }
+    .progress-bar li:last-child span {
+        width: 200%;
+        display: inline-block;
+        position: absolute;
+        left: -100%;
+    }
+
+    .progress-bar .is-complete:last-child:after,
+    .progress-bar .is-active:last-child:after {
+        width: 200%;
+        left: -100%;
+    }
+
+    .progress-bar .is-complete:before {
+        background-color: var(--color-green);
+    }
+
+    .progress-bar .is-active:before,
+    .progress-bar li:hover:before,
+    .progress-bar .is-hovered:before {
+        background-color: var(--color-white);
+        border-color: var(--color-green);
+    }
+    .progress-bar li:hover:before,
+    .progress-bar .is-hovered:before {
+        transform: scale(1.33);
+    }
+
+    .progress-bar li:hover span,
+    .progress-bar li.is-hovered span {
+        opacity: 1;
+    }
+
+    .progress-bar:hover li:not(:hover) span {
+        opacity: 0;
+    }
+
+    .x-ray .progress-bar,
+    .x-ray .progress-bar li {
+        border: 1px dashed red;
+    }
+
+    .progress-bar .has-changes {
+        opacity: 1 !important;
+    }
+    .progress-bar .has-changes:before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        left: calc(50% - 4px);
+        bottom: -20px;
+        background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23ed1c24%22%20d%3D%22M4%200l4%208H0z%22%2F%3E%3C%2Fsvg%3E');
+    }
+
+/* ======================================
+    9. Columns
+========================================= */
+
+    .one_half {
+        margin-right: 8%;
+        float: left;
+        position: relative;
+        margin-bottom: 3px;
+    }
+
+    .last {
+        margin-left: 0 !important;
+        clear: right;
+    }
+
+    .last2 {
+        margin-left: 0 !important;
+        clear: left;
+    }
+
+    .one {
+        display: block;
+        clear: both;
+        margin-bottom: 30px;
+    }
+
+    .one_half {
+        width: 46%;
+    }
+
+    .one_half.margin-0 {
+        width: 50%;
+    }
+
+
+/* ===================================
+    10. Footer
+====================================== */
+
+    footer a {
+        color: #fff;
+    }
+
+    footer ul {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .footer {
+        font-size: 16px;
+        line-height: 36px;
+        padding-top: 75px;
+        padding-bottom: 60px;
+        clear: both;
+        color: #fff;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        background-color: #111;
+    }
+
+    .footer-content {
+        width: 900px;
+    }
+
+    .footer-logo img {
+        width: 190px;
+        height: 55.2px;
+        margin-bottom: 30px;
+    }
+
+
+    .form-percent {
+        display: block;
+        width: 100%;
+        font-size: 40px;
+    }
+
+    .form-text {
+        display: block;
+        width: 100%;
+    }
+
+    .form-text span {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+/* ===================================
+    11. forms 
+====================================== */
+
+    .forms-holder {
+        position: relative;
+        margin: 40px 0;
+    }
+
+    .form-holder {
+        margin-bottom: 30px;
+    }
+
+    .form-holder:after {
+        clear: both;
+        display: block;
+        content: "";
+    }
+
+    .form-percent {
+        font-size: 48px;
+        line-height: 100%;
+        font-weight: 100;
+        width: 100px;
+        display: inline-block;
+        vertical-align: text-top;
+    }
+
+    .form {
+        width: 100%;
+        height: 3px;
+        background-color: rgba(60, 68, 64, 0.3);
+        margin-bottom: 30px;
+    }
+
+    .form-text {
+        display: inline-block;
+        width: calc(100% - 145px);
+        margin-right: 0;
+        float: right;
+        vertical-align: text-top;
+    }
+
+    .form-fill {
+        width: 100%;
+        height: 10px;
+        background-color: #53a318;
+    }
+
+    .form-text span {
+        font-size: 22px;
+        line-height: 35px;
+    }
