@@ -13,3 +13,4 @@ for windows
 ```
 python app.py
 ```
+link for Sasta Teams: https://sastateams.web.app/
