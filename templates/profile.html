@@ -49,10 +49,10 @@
                 <nav id="header-main-menu">
                     <ul class="main-menu sm sm-clean">
                         <li>
-                            <a href="home.html"><i class="fa fa-home"> Home</i></a>
+                            <a href="{{ url_for('home') }}"><i class="fa fa-home"> Home</i></a>
                         </li>
                         <li>
-                            <a href="profile.html"><i class="fa fa-user"></i> Profile</a>
+                            <a href="{{ url_for('user_profile') }}"><i class="fa fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#status details"><i class="fa fa-thumb-tack"></i> Status details</a>
@@ -84,6 +84,9 @@
 
                             </script>
                         </li>
+                        <li>
+                            <a href="{{ url_for('logout') }}"><i class="fa fa-bell"></i> Logout </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -103,34 +106,34 @@
                             BASIC DETAILS
                         </p>
                         <h3 style="color:black;">
-                            First Name<br>
-                            Last Name
+                            {{ fname }}<br>
+                            {{ lname }}
                         </h3>
                         <p>
                         <ul style="list-style-type:none;">
                             <li>
-                                Email id: <p style="color:black;">firstname@abcd.com</p>
+                                Email id: <p style="color:black;">{{ email }}</p>
                             </li>
                             <li>
-                                Contact Number: <p style="color:black;"> xxxxxxxxxx </p>
+                                Contact Number: <p style="color:black;"> {{ phno }} </p>
                             </li>
                             <li>
-                                DOB: <p style="color:black;">01-01-1998</p>
+                                DOB: <p style="color:black;">{{ birthdate }}</p>
                             </li>
                             <li>
-                                Gender: <p style="color:black;"> Male/Female/Others </p>
+                                Gender: <p style="color:black;">{{ gender }}</p>
                             </li>
                             <li>
-                                Citizenship: <p style="color:black;">Indian</p>
+                                Citizenship: <p style="color:black;">{{ citi }}</p>
                             </li>
                             <li>
-                                Highest Level of Education: <p style="color:black;">Masters in Technology</p>
+                                Highest Level of Education: <p style="color:black;">{{ batch }}</p>
                             </li>
                             <li>
-                                Graduating Institution Name: <p style="color:black;">xxx</p>
+                                Graduating Institution Name: <p style="color:black;">{{ inst }}</p>
                             </li>
                             <li>
-                                Graduation Year: <p style="color:black;">yyyy</p>
+                                Graduation Year: <p style="color:black;">{{ year }}</p>
                             </li>
                         </ul>
                         </p>

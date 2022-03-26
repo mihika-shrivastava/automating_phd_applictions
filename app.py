@@ -9,18 +9,14 @@ client = pym.MongoClient(
     "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false")
 db = client.get_database('test')
 reg = db.reg_details
+det = db.basic_details
 
 
 @app.route("/", methods=['post', 'get'])
-def index():
-    return render_template('profile.html')
-
-
-@app.route("/signin", methods=['post', 'get'])
 def signin():
     message = ''
     if "email" in session:
-        return redirect(url_for("logged_in"))
+        return redirect(url_for("home"))
     if request.method == 'POST':
         username = request.form.get("name")
         email = request.form.get("email")
@@ -48,7 +44,9 @@ def signin():
 
             user_data = reg.find_one({'email': email})
             new_email = user_data['email']
-            return render_template('land.html', email=new_email)
+            session["email"] = new_email
+            session["username"] = user_input['name']
+            return render_template('basic_details.html', email_val=new_email)
     return render_template('signin.html')
 
 
@@ -56,13 +54,12 @@ def signin():
 def login():
     message = 'Please login to your account'
     if "email" in session:
-        return render_template('land.html')
+        return render_template('home.html')
 
     if request.method == "POST":
         username = request.form.get("name")
         email = request.form.get("email")
         password = request.form.get("password")
-        name_found = reg.find_one({"name": username})
         email_found = reg.find_one({"email": email})
         if email_found:
             email_val = email_found['email']
@@ -70,10 +67,11 @@ def login():
 
             if bc.checkpw(password.encode('utf-8'), passwordcheck):
                 session["email"] = email_val
-                return render_template('land.html', email=email_val)
+                session["username"] = email_found['name']
+                return redirect(url_for('home'))
             else:
                 if "email" in session:
-                    return redirect(url_for("logged_in"))
+                    return redirect(url_for("home"))
                 message = 'Wrong password'
                 return render_template('login.html', message=message)
         else:
@@ -83,9 +81,62 @@ def login():
     return render_template('login.html', message=message)
 
 
-@app.route("/dashboard")
+@app.route("/details", methods=["POST", "GET"])
 def logged_in():
+    if request.method == 'POST':
+        fname = request.form.get("firstname")
+        lname = request.form.get("lastname")
+        email = request.form.get("email")
+        phno = request.form.get("contactnumber")
+        gender = request.form.get('gender')
+        birthdate = request.form.get('birthdate')
+        citizenship = request.form.get('citizenship')
+        batch = request.form.get('batch')
+        inst = request.form.get('institution')
+        year = request.form.get('year')
+
+        user_details = {'name': session['username'], 'fname': fname, 'lname': lname, 'email': email, 'phno': phno,
+                        'gender': gender, 'birthdate': birthdate, 'citizenship': citizenship, 'batch': batch, 'inst': inst, 'year': year}
+
+        det.insert_one(user_details)
+
+        session['details'] = True
+
+        return render_template('home.html')
+    return render_template('basic_details.html', email_val=session['email'])
+
+
+@app.route("/logout", methods=["POST", "GET"])
+def logout():
+    if "email" in session:
+        session.pop("email", None)
+        return render_template("login.html")
+    else:
+        return render_template('signin.html')
+
+
+@app.route("/dashboard")
+def home():
     return render_template('home.html')
+
+
+@app.route("/profile")
+def user_profile():
+    finder = det.find_one({'name': session['username']})
+    if session['details']:
+        fname = finder['fname']
+        lname = finder['lname']
+        email = finder['email']
+        phno = finder['phno']
+        birthdate = finder['birthdate']
+        gender = finder['gender']
+        citi = finder['citizenship']
+        batch = finder['batch']
+        inst = finder['inst']
+        year = finder['year']
+        return render_template('profile.html', fname=fname, lname=lname, email=email, phno=phno, birthdate=birthdate, gender=gender, citi=citi, batch=batch, inst=inst, year=year)
+
+    return render_template('profile.html')
 
 
 if __name__ == "__main__":

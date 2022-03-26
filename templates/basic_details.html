@@ -1,117 +1,129 @@
 <html>
-    <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link  rel="stylesheet" href="css/login2.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark row-4 " style="height:80px" >
-            <div class="container-fluid" >
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">student</a>
-                    </li>
-                    
-                    <div class="dropdown" >
-                    <span class="fa fa-flickr"></span>
-                    <div class="dropdown-content">
-                    <a href="#" style="color:black;text-decoration:none">Profile</a>
-                    <br/>
-                    <a href=""# style="color:black;text-decoration:none">Edit</a>
-                    <br/>
-                    <hr style="color:black"/>
-                    <a href="#" style="color:black;text-decoration:none">Logout</a>
-                    </div>
-                    </div>
-                
-                </ul>
-                </div>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login2.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css/font-awesome.min.css') }}">
+</head>
+
+<body>
+  <!-- navbar -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark row-4 " style="height:80px">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">student</a>
+          </li>
+
+          <div class="dropdown">
+            <span class="fa fa-flickr"></span>
+            <div class="dropdown-content">
+              <a href="#" style="color:black;text-decoration:none">Profile</a>
+              <br />
+              <a href="" # style="color:black;text-decoration:none">Edit</a>
+              <br />
+              <hr style="color:black" />
+              <a href="#" style="color:black;text-decoration:none">Logout</a>
             </div>
-            </nav>
-        <!-- body-->
-        <div class="container" style="margin:20px" >
-        <form>
-            <div class="mb-3">
-              <label for="firstname" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="firstname" placeholder="Enter your answer" required style="width:500px;" >
-            </div>
-            <div class="mb-3">
-              <label for="lastname" class="form-label">Last Name</label>
-              <input type="text" class="form-control" id="lastname" placeholder="Enter your answer" required style="width:500px;" >
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">E-mail address</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your answer" required style="width:500px;" >
-            </div>
-            <div class="mb-3">
-              <label for="contactnumber" class="form-label">Contact Number</label>
-              <input type="text" class="form-control" id="contactnumber" placeholder="Enter your answer" required style="width:500px;" >
-            </div>
-            <label>Gender</label>
-            <div style="display:flex;margin-left: 150px;">
-              
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="male" id="male" value="option1" unchecked>
-              <label class="form-check-label" for="male"> MALE</label>
-            </div>
-            <div class="form-check" style="margin-left: 10px;">
-              <input class="form-check-input" type="radio" name="female" id="female" value="option2">
-              <label class="form-check-label" for="female"> FEMALE</label>
-            </div>
-            <div class="form-check" style="margin-left: 10px;"></div>
-              <input class="form-check-input" type="radio" name="others" id="others" value="option3">
-              <label class="form-check-label" for="others"> OTHERS</label>
-            </div>
-            <div class="mb-3">
-                <label for="birthday" class="form-label">Birthday:</label>
-                <input type="date" class="form-control" name="birthday" id="birthday" required style="width:500px;" >
-              </div>
-              <div class="mb-3">
-              <label for="citizenship" class="form-label">Citizenship</label>
-              <input type="text" class="form-control" id="citizenship" placeholder="Enter your answer" required style="width:500px;" >
-            </div>  
-        <label>Batch</label>
-        <div style="display:flex;margin-left: 150px;">
+          </div>
+
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+  <!-- body-->
+  <div class="container" style="margin:20px">
+    <form action="/details" method="post">
+      <div class="mb-3">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="Enter your answer" required
+          style="width:500px;" name="firstname">
+      </div>
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Enter your answer" required
+          style="width:500px;" name="lastname">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your answer" required
+          style="width:500px;" value="{{ email_val }}" name="email">
+      </div>
+      <div class="mb-3">
+        <label for="contactnumber" class="form-label">Contact Number</label>
+        <input type="text" class="form-control" id="contactnumber" placeholder="Enter your answer" required
+          style="width:500px;" name="contactnumber">
+      </div>
+      <label for="Gender">Gender</label>
+      <div style="display:flex;margin-left: 150px;">
+
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="btech" id="btech" value="option1" unchecked>
-        <label class="form-check-label" for="btech">B-Tech</label>
+          <input class="form-check-input" type="radio" name="gender" id="male" value="male" unchecked>
+          <label class="form-check-label" for="male">MALE</label>
         </div>
         <div class="form-check" style="margin-left: 10px;">
-        <input class="form-check-input" type="radio" name="mtech" id="mtech" value="option2">
-        <label class="form-check-label" for="mtech">M-Tech</label>
-        </div>  
+          <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+          <label class="form-check-label" for="female"> FEMALE</label>
         </div>
-        <div class="mb-3">
+        <div class="form-check" style="margin-left: 10px;"></div>
+        <input class="form-check-input" type="radio" name="gender" id="others" value="others">
+        <label class="form-check-label" for="others"> OTHERS</label>
+      </div>
+      <div class="mb-3">
+        <label for="birthday" class="form-label">Birthday:</label>
+        <input type="date" class="form-control" name="birthdate" id="birthday" required style="width:500px;">
+      </div>
+      <div class="mb-3">
+        <label for="citizenship" class="form-label">Citizenship</label>
+        <input type="text" class="form-control" id="citizenship" placeholder="Enter your answer" required
+          style="width:500px;" name="citizenship">
+      </div>
+      <label for="batch">Batch</label>
+      <div style="display:flex;margin-left: 150px;">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="batch" id="btech" value="btech" unchecked>
+          <label class="form-check-label" for="btech">B-Tech</label>
+        </div>
+        <div class="form-check" style="margin-left: 10px;">
+          <input class="form-check-input" type="radio" name="batch" id="mtech" value="mtech">
+          <label class="form-check-label" for="mtech">M-Tech</label>
+        </div>
+      </div>
+      <div class="mb-3">
         <label for="institution" class="form-label">Institution Name</label>
-        <input type="text" class="form-control" id="institution" placeholder="Enter your answer" required style="width:500px;" >
-        </div>
-        <div class="mb-3">
+        <input type="text" class="form-control" id="institution" placeholder="Enter your answer" required
+          style="width:500px;" name="institution">
+      </div>
+      <div class="mb-3">
         <label for="year" class="form-label">Graduation Year</label>
-        <input type="text" class="form-control" id="year"placeholder="Enter your answer" required style="width:500px;" >
-        </div>
-        <button type="submit" class="btn btn-success">Submit</button>
-        </form>
-        </div>
-          <!--fotter-->
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">
-            <div class="col-md-10 d-flex align-items-center justify-content-center" style="margin-left:10px">
-              <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"> home
-              </a>
-              <span class="text-muted">© 2021 Company, Inc</span>
-            </div>
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            </ul>
-          </footer>
-    </body>
+        <input type="text" class="form-control" id="year" placeholder="Enter your answer" required style="width:500px;"
+          name="year">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  <!--fotter-->
+  <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">
+    <div class="col-md-10 d-flex align-items-center justify-content-center" style="margin-left:10px">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"> home
+      </a>
+      <span class="text-muted">© 2021 Company, Inc</span>
+    </div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    </ul>
+  </footer> -->
+</body>
+
 </html>

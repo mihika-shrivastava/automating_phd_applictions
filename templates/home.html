@@ -54,10 +54,10 @@
                     <nav id="header-main-menu">
                         <ul class="main-menu sm sm-clean">
                             <li>
-                                <a href="home.html"><i class="fa fa-home"></i></a>
+                                <a href="{{ url_for('home') }}"><i class="fa fa-home"></i></a>
                             </li>
                             <li>
-                                <a href="profile.html"><i class="fa fa-user"></i> Profile</a>
+                                <a href="{{ url_for('user_profile') }}"><i class="fa fa-user"></i> Profile</a>
                             </li>
                             <li>
                                 <a href="#status details"><i class="fa fa-thumb-tack"></i> Status
@@ -89,6 +89,9 @@
                                     new showLocalTime("ist", "Asia/Kolkata", "hh:mm:ss A")
 
                                 </script>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('logout') }}"><i class="fa fa-bell"></i> Logout </a>
                             </li>
                         </ul>
                     </nav>
