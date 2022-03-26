@@ -4,7 +4,9 @@ import pymongo as pym
 import bcrypt as bc
 
 app = Flask(__name__)
-app.secret_key = "verymuchsecret"
+app.secret_key = '\xfd{H\xe5<\x95\xf9\xe3\x96.5\xd1\x01O<\
+!\xd5\xa2\xa0\x9fR"\xa1\xa8'
+
 
 client = pym.MongoClient(
     "mongodb+srv://rohit:1122@cluster0.8qt0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
@@ -50,6 +52,7 @@ def signin():
             new_email = user_data['email']
             session["email"] = new_email
             session["username"] = user_input['name']
+            session["logged_in"] = True
             return render_template('basic_details.html', email_val=new_email)
     return render_template('signin.html')
 
@@ -58,6 +61,7 @@ def signin():
 def login():
     message = 'Please login to your account'
     if "email" in session:
+        session["logged_in"] = True
         return render_template('home.html')
 
     if request.method == "POST":
@@ -72,6 +76,7 @@ def login():
             if bc.checkpw(password.encode('utf-8'), passwordcheck):
                 session["email"] = email_val
                 session["username"] = email_found['name']
+                session["logged_in"] = True
                 return redirect(url_for('home'))
             else:
                 if "email" in session:
@@ -88,6 +93,7 @@ def login():
 @app.route("/details", methods=["POST", "GET"])
 def logged_in():
     if request.method == 'POST':
+        session["logged_in"] = True
         fname = request.form.get("firstname")
         lname = request.form.get("lastname")
         email = request.form.get("email")
@@ -113,34 +119,47 @@ def logged_in():
 @app.route("/logout", methods=["POST", "GET"])
 def logout():
     if "email" in session:
+        session["logged_in"] = False
         session.pop("email", None)
         return render_template("login.html")
     else:
+        session["logged_in"] = False
         return render_template('signin.html')
 
 
 @app.route("/dashboard")
 def home():
-    return render_template('home.html')
+    if session["logged_in"]:
+        return render_template('home.html')
+    else:
+        return redirect('login')
 
 
 @app.route("/profile")
 def user_profile():
-    finder = det.find_one({'name': session['username']})
-    if session['details']:
-        fname = finder['fname']
-        lname = finder['lname']
-        email = finder['email']
-        phno = finder['phno']
-        birthdate = finder['birthdate']
-        gender = finder['gender']
-        citi = finder['citizenship']
-        batch = finder['batch']
-        inst = finder['inst']
-        year = finder['year']
-        return render_template('profile.html', fname=fname, lname=lname, email=email, phno=phno, birthdate=birthdate, gender=gender, citi=citi, batch=batch, inst=inst, year=year)
+    if session["logged_in"]:
+        finder = det.find_one({'name': session['username']})
+        if session['details']:
+            fname = finder['fname']
+            lname = finder['lname']
+            email = finder['email']
+            phno = finder['phno']
+            birthdate = finder['birthdate']
+            gender = finder['gender']
+            citi = finder['citizenship']
+            batch = finder['batch']
+            inst = finder['inst']
+            year = finder['year']
+            return render_template('profile.html', fname=fname, lname=lname, email=email, phno=phno, birthdate=birthdate, gender=gender, citi=citi, batch=batch, inst=inst, year=year)
 
-    return render_template('profile.html')
+        return render_template('profile.html')
+    else:
+        return redirect('login')
+
+
+@app.route("/user/documents")
+def doc_vault():
+    return render_template('documents.html')
 
 
 if __name__ == "__main__":

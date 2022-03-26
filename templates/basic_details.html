@@ -1,11 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/login2.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/css/font-awesome.min.css') }}">
-  <title>Basic Details</title>
 </head>
 
 <body>
@@ -27,7 +31,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#">student</a>
           </li>
-
           <div class="dropdown">
             <span class="fa fa-flickr"></span>
             <div class="dropdown-content">
@@ -39,12 +42,12 @@
               <a href="#" style="color:black;text-decoration:none">Logout</a>
             </div>
           </div>
-
         </ul>
       </div>
     </div>
   </nav> -->
   <!-- body-->
+  <h4>Enter basic Details:</h4>
   <div class="container" style="margin:20px">
     <form action="/details" method="post">
       <div class="mb-3">
@@ -67,39 +70,50 @@
         <input type="text" class="form-control" id="contactnumber" placeholder="Enter your answer" required
           style="width:500px;" name="contactnumber">
       </div>
+
       <label for="Gender">Gender</label>
       <div style="display:flex;margin-left: 150px;">
 
         <div class="form-check">
           <input class="form-check-input" type="radio" name="gender" id="male" value="male" unchecked>
-          <label class="form-check-label" for="male">MALE</label>
+          <label class="form-check-label" for="male"> Male</label>
         </div>
         <div class="form-check" style="margin-left: 10px;">
           <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-          <label class="form-check-label" for="female"> FEMALE</label>
+          <label class="form-check-label" for="female"> Female</label>
         </div>
         <div class="form-check" style="margin-left: 10px;"></div>
         <input class="form-check-input" type="radio" name="gender" id="others" value="others">
-        <label class="form-check-label" for="others"> OTHERS</label>
+        <label class="form-check-label" for="others">Others</label>
       </div>
+
       <div class="mb-3">
-        <label for="birthday" class="form-label">Birthday:</label>
+        <label for="birthday" class="form-label">Birthday</label>
         <input type="date" class="form-control" name="birthdate" id="birthday" required style="width:500px;">
       </div>
-      <div class="mb-3">
-        <label for="citizenship" class="form-label">Citizenship</label>
-        <input type="text" class="form-control" id="citizenship" placeholder="Enter your answer" required
-          style="width:500px;" name="citizenship">
-      </div>
-      <label for="batch">Batch</label>
+
+      <label for="citizenship">Citizenship</label>
       <div style="display:flex;margin-left: 150px;">
+
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="batch" id="btech" value="btech" unchecked>
-          <label class="form-check-label" for="btech">B-Tech</label>
+          <input class="form-check-input" type="radio" name="citizenship" id="indian" value="indian" unchecked>
+          <label class="form-check-label" for="indian">Indian</label>
         </div>
         <div class="form-check" style="margin-left: 10px;">
-          <input class="form-check-input" type="radio" name="batch" id="mtech" value="mtech">
-          <label class="form-check-label" for="mtech">M-Tech</label>
+          <input class="form-check-input" type="radio" name="citizenship" id="non-indian" value="non-indian">
+          <label class="form-check-label" for="non-indian">Non-Indian</label>
+        </div>
+      </div>
+
+      <label for="batch">Educational Qualification</label>
+      <div style="display:flex;margin-left: 150px;">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="edu" id="ug" value="ug" unchecked>
+          <label class="form-check-label" for="ug">Undergraduate</label>
+        </div>
+        <div class="form-check" style="margin-left: 10px;">
+          <input class="form-check-input" type="radio" name="edu" id="pg" value="pg">
+          <label class="form-check-label" for="pg">Postgraduate</label>
         </div>
       </div>
       <div class="mb-3">
@@ -107,11 +121,15 @@
         <input type="text" class="form-control" id="institution" placeholder="Enter your answer" required
           style="width:500px;" name="institution">
       </div>
+
+      <!--<input type="number" min="1900" max="2099" step="1" value="2016" />-->
+
       <div class="mb-3">
         <label for="year" class="form-label">Graduation Year</label>
-        <input type="text" class="form-control" id="year" placeholder="Enter your answer" required style="width:500px;"
-          name="year">
+        <input type="number" min="1950" max="2022" step="1" value="2021" class="form-control" id="year"
+          placeholder="Enter your answer" required style="width:500px;" name="year">
       </div>
+
       <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>
