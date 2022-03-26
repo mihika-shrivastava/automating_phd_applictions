@@ -5,9 +5,13 @@ import bcrypt as bc
 
 app = Flask(__name__)
 app.secret_key = "verymuchsecret"
+
 client = pym.MongoClient(
-    "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false")
-db = client.get_database('test')
+    "mongodb+srv://rohit:1122@cluster0.8qt0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+
+# "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
+
+db = client.test
 reg = db.reg_details
 det = db.basic_details
 
