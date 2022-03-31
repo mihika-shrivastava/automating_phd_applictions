@@ -8,16 +8,15 @@
 
     <link href='https://fonts.googleapis.com/css?family=Rubik:400,700,700i' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href='style.css' />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href='style.css' />
     <link rel="stylesheet" type="text/css" href='{{ url_for("static", filename="css/style.css") }}' />
 
 
 
-    <script src="js/moment.min.js"></script>
-    <script src="js/moment-timezone-with-data.min.js"></script>
+    <script src="{{ url_for('static', filename='js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/moment-timezone-with-data.min.js') }}"></script>
 
 
     <!--Dynamic time-->
@@ -54,10 +53,10 @@
                 <nav id="header-main-menu">
                     <ul class="main-menu sm sm-clean">
                         <li>
-                            <a href="{ url_for('home') }}"><i class="fa fa-home"> Home</i></a>
+                            <a href="{{ url_for('home') }}"><i class="fa fa-home"> Home</i></a>
                         </li>
                         <li>
-                            <a href="{ url_for('user_profile') }}"><i class="fa fa-user"></i> Profile</a>
+                            <a href="{{ url_for('user_profile') }}"><i class="fa fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#status details"><i class="fa fa-thumb-tack"></i> Status details</a>
