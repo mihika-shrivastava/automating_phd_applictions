@@ -54,18 +54,21 @@
                     <nav id="header-main-menu">
                         <ul class="main-menu sm sm-clean">
                             <li>
-                                <a href="{{ url_for('home') }}"><i class="fa fa-home"></i></a>
+                                <a href="{{ url_for('home') }}">Home</a>
                             </li>
                             <li>
-                                <a href="{{ url_for('user_profile') }}"><i class="fa fa-user"></i> Profile</a>
+                                <a href="{{ url_for('user_profile') }}">Profile</a>
                             </li>
                             <li>
-                                <a href="#status details"><i class="fa fa-thumb-tack"></i> Status
+                                <a href="#status details">Status
                                     details</a>
-
                             </li>
                             <li>
-                                <a href="#notifications"><i class="fa fa-bell"></i> Notifications</a>
+                                <!--i will add the html file for calendar. just ensure this works. -->
+                                <a href="{{ url_for('calendar') }}">Calendar</a>
+                            </li>
+                            <li>
+                                <a href="#notifications">Notifications</a>
                             </li>
 
                             <li>
@@ -91,7 +94,7 @@
                                 </script>
                             </li>
                             <li>
-                                <a href="{{ url_for('logout') }}"><i class="fa fa-bell"></i> Logout </a>
+                                <a href="{{ url_for('logout') }}">Logout </a>
                             </li>
                         </ul>
                     </nav>
@@ -188,101 +191,6 @@
         </div>
     </div>
 
-
-
-
-    <br><br>
-    <!-- Calendar to keep track of important events Section -->
-    <div data-aos="fade-up">
-        <div class="calendar" id="calendar"></div>
-        <div id="clients" class="section no-page-title">
-            <div class="section-wrapper block content-1170 center-relative">
-
-                <table class="calendrier">
-                    <caption class="image-caption">march</caption>
-
-                    <thead class="day">
-
-                        <tr class="week">
-                            <th scope="col"><abbr title="monday">Mon</abbr></th>
-                            <th scope="col"><abbr title="tuesday">Tue</abbr></th>
-                            <th scope="col"><abbr title="wednesday">Wed</abbr></th>
-                            <th scope="col"><abbr title="thursday">Thu</abbr></th>
-                            <th scope="col"><abbr title="friday">Fri</abbr></th>
-                            <th scope="col"><abbr title="saturday">Sat</abbr></th>
-                            <th scope="col"><abbr title="sunday">Sun</abbr></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="col"><abbr title="monday"></abbr></th>
-                            <th scope="col"><abbr title="tuesday">1</abbr></th>
-                            <th scope="col"><abbr title="wednesday">2</abbr></th>
-                            <th scope="col"><abbr title="thursday">3</abbr></th>
-                            <th scope="col"><abbr title="friday">4</abbr></th>
-                            <th scope="col"><abbr title="saturday">5</abbr></th>
-                            <th scope="col"><abbr title="sunday"><span class="sunday">6</span></abbr></th>
-                        </tr>
-
-                        <tr>
-                            <th scope="col"><abbr title="monday">7</abbr></th>
-                            <th scope="col"><abbr title="tuesday">8</abbr></th>
-                            <th scope="col"><abbr title="wednesday">9</abbr></th>
-                            <th scope="col"><abbr title="thursday">10</abbr></th>
-                            <th scope="col"><abbr title="friday">11</abbr></th>
-                            <th scope="col"><abbr title="saturday">12</abbr></th>
-                            <th scope="col"><abbr title="sunday"><span class="sunday">13</span></abbr>
-                            </th>
-                        </tr>
-
-                        <tr>
-                            <th scope="col"><abbr title="monday">14</abbr></th>
-                            <th scope="col"><abbr title="tuesday">15</abbr></th>
-                            <th scope="col"><abbr title="wednesday">16</abbr></th>
-                            <th scope="col"><abbr title="thursday">17</abbr></th>
-                            <th scope="col"><abbr title="friday">18</abbr></th>
-                            <th scope="col"><abbr title="saturday">19</abbr></th>
-                            <th scope="col"><abbr title="sunday"><span class="sunday">20</span></abbr>
-                        </tr>
-
-                        <tr>
-                            <th scope="col"><abbr title="monday">21</abbr></th>
-                            <th scope="col"><abbr title="tuesday">22</abbr></th>
-                            <th scope="col"><abbr title="wednesday">23</abbr></th>
-                            <th scope="col"><abbr title="thursday">24</abbr></th>
-                            <th scope="col"><abbr title="friday">25</abbr></th>
-                            <th scope="col"><abbr title="saturday"><span class="current">26</span></abbr>
-                            </th>
-                            <th scope="col"><abbr title="sunday"><span class="sunday">27</span></abbr>
-                            </th>
-                        </tr>
-
-                        <tr>
-                            <th scope="col"><abbr title="monday">28</abbr></th>
-                            <th scope="col"><abbr title="tuesday">29</abbr></th>
-                            <th scope="col"><abbr title="wednesday">30</abbr></th>
-                            <th scope="col"><abbr title="thursday">31</abbr></th>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-
-
-
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-
-
-
-    <br>
-    <br>
-    <br>
     <br>
     <!-- Quote Section -->
     <div data-aos="fade-up">
