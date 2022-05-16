@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <title>Automating PhD Applications- Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Rubik:400,700,700i' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href='style.css' />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href='{{ url_for("static", filename="css/style.css") }}' />
+
+
+
+    <script src="{{ url_for('static', filename='js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/moment-timezone-with-data.min.js') }}"></script>
+
+
+    <!--Dynamic time-->
+    <script type="text/javascript">
+        function showLocalTime(container, zoneString, formatString) {
+            var thisobj = this
+            this.container = document.getElementById(container)
+            this.localtime = moment.tz(new Date(), zoneString)
+            this.formatString = formatString
+            this.container.innerHTML = this.localtime.format(this.formatString)
+            setInterval(function () { thisobj.updateContainer() }, 1000) //update container every second
+        }
+
+        showLocalTime.prototype.updateContainer = function () {
+            this.localtime.second(this.localtime.seconds() + 1)
+            this.container.innerHTML = this.localtime.format(this.formatString)
+        }
+
+
+    </script>
+
+</head>
+
+<body class="page-template-onepage">
+    <header class="header-holder">
+        <div class="menu-wrapper center-relative relative">
+            <div class="header-logo">
+                <a href="{{ url_for('home') }}">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Automating Applications">
+                </a>
+            </div>
+
+            <div class="menu-holder">
+                <nav id="header-main-menu">
+                    <ul class="main-menu sm sm-clean">
+                        <li>
+                            <a href="{{ url_for('home') }}"><i class="fa fa-home"> Home</i></a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('user_profile') }}"><i class="fa fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#status details"><i class="fa fa-thumb-tack"></i> Status details</a>
+
+                        </li>
+                        <li>
+                            <a href="#notifications"><i class="fa fa-bell"></i> Notifications</a>
+                        </li>
+
+                        <li>
+                            <a><span id="spanDate"></span>
+                                <script type="text/javascript">
+                                    var months =
+                                        ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                                            'August', 'September', 'October', 'November', 'December'];
+                                    var today = new Date();
+                                    document.getElementById("spanDate").innerHTML =
+                                        months[today.getMonth()] + " " + today.getDate() + ", " +
+                                        today.getFullYear();
+                                </script>
+                            </a>
+                        </li>
+                        <li>
+                            <div style="color: white; font-family: 'Rubik'; font-size: 15px; margin: 14px"><span
+                                    id="ist"></span></div>
+                            <script type="text/javascript">
+
+                                new showLocalTime("ist", "Asia/Kolkata", "hh:mm:ss A")
+
+                            </script>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('logout') }}"><i class="fa fa-bell"></i> Logout </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </header>
+
+    <div id="home" class="section no-page-title">
+        <div class="section-wrapper block content-1170 center-relative">
+            <div class="content-wrapper">
+                <h1>Show File-select Fields</h1>
+
+                <h3>
+                    Documents to Submit:
+                </h3>
+
+                <form action="/action_page.php" enctype="multipart/form-data">
+
+                    <label for="ug_ms" style="color: black;">Undergraduate Degree's Marksheet</label>
+                    <br>
+                    <input input class="button2 button1" type="file" id="ug_ms" name="ug_ms" />
+                    <br /><br />
+
+                    <label for="pg_ms" style="color: black;">Postgraduate Degree's Marksheet</label>
+                    <br>
+                    <input input class="button2 button1" type="file" id="pg_ms" name="pg_ms" />
+                    <br /><br />
+
+
+                    <label for="papers" style="color: black;">Any previous paper publications:</label>
+                    <br>
+                    <input class="button2 button1" type="file" id="myfile" name="papers" multiple="papers" />
+                    <br /><br />
+
+                    <button class="button button1" type="submit" class="btn btn-success">
+                        Submit
+                    </button>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content center-relative">
+        <div class="footer-logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Amrita" />
+        </div>
+        <p>
+            Team no. 13 <br>
+            A Shivaani (CB.EN.U4CSE19401) <br>
+            Akash Hooda (CB.EN.U4CSE19406) <br>
+            Veerabhadram (CB.EN.U4CSE19421) <br>
+            Mihika Shrivastava (CB.EN.U4CSE19439)<br>
+            Rohit Ganesh (CB.EN.U4CSE19463)
+
+
+        </p>
+    </div>
+</footer>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client-Side Application</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="onlineTest.css" />
+</head>
+
+<body>
+  <div id="maindiv">
+    <div class="grid">
+      <h6 style="color: black;">Select a question to Navigate</h6>
+      <br/><br/><br/>
+      <a href="#q1">01</a><a href="#q2">02</a><a href="#q3">03</a><br />
+      <a href="#q4">04</a><a href="#q5">05</a><a href="#q6">06</a><br />
+    </div>
+    <div id="clockdiv" class="timer d-flex clockdiv ">
+      <div class="d-flex">
+        <span class="hours " id="hour"></span>
+        <div class="smalltext">hr</div>
+      </div>
+      <div class="d-flex">
+        <span class="minutes" id="minute"></span>
+        <div class="smalltext">min</div>
+      </div>
+      <div class="d-flex">
+        <span class="seconds" id="second"></span>
+        <div class="smalltext">sec</div>
+      </div>
+    </div>
+    <div id="formdiv">
+      <div id="formhead">
+        <h1>Phd Appplication Form</h1>
+      </div>
+
+      <form action="/submit" id="formbody" method="post">
+        <div class="card-body">
+          <div class="q1" id="q1">
+            Q1. This is 1st question
+          </div>
+          <div class="card-body">
+            <div class="card-body">
+              <img class="img-fluid img-thumbnail" id="q1_img"
+                src="https://images.unsplash.com/photo-1590845947667-381579052389?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2JsZW18ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+                height="40%" width="40%">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q1" id="q1_op1" checked>
+              <label class="form-check-label" for="q1_op1">
+                Option1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q1" id="q1_op2" >
+              <label class="form-check-label" for="q1_op2">
+                Option2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q1" id="q1_op3" >
+              <label class="form-check-label" for="q1_op3">
+                Option3
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q1" id="q1_op4" >
+              <label class="form-check-label" for="q1_op4">
+                Option4
+              </label>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <div class="q2" id="q2">
+            Q2. This is 2nd question
+          </div>
+          <div class="card-body">
+            <div class="card-body">
+              <img class="img-fluid img-thumbnail" id="q2_img"
+                src="https://images.unsplash.com/photo-1590845947667-381579052389?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2JsZW18ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+                height="40%" width="40%">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q2" id="q2_op1">
+              <label class="form-check-label" for="q2_op1">
+                Option1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q2" id="q2_op2">
+              <label class="form-check-label" for="q2_op2">
+                Option2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q2" id="q2_op3" >
+              <label class="form-check-label" for="q2_op3">
+                Option3
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q2" id="q2_op4">
+              <label class="form-check-label" for="q2_op4">
+                Option4
+              </label>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <div class="q3" id="q3">
+            Q3. This is 3rd question
+          </div>
+          <div class="card-body">
+            <div class="card-body">
+              <img class="img-fluid img-thumbnail" id="q3_img"
+                src="https://images.unsplash.com/photo-1590845947667-381579052389?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2JsZW18ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+                height="40%" width="40%">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q3" id="q3_op1" >
+              <label class="form-check-label" for="q3_op1">
+                Option1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q3" id="q3_op2">
+              <label class="form-check-label" for="q3_op2">
+                Option2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q3" id="q3_op3" >
+              <label class="form-check-label" for="q3_op3">
+                Option3
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q3" id="q3_op4">
+              <label class="form-check-label" for="q3_op4">
+                Option4
+              </label>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <div class="q4" id="q4">
+            Q4. This is 4th question
+          </div>
+          <div class="card-body">
+            <div class="card-body">
+              <img class="img-fluid img-thumbnail" id="q4_img"
+                src="https://images.unsplash.com/photo-1590845947667-381579052389?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2JsZW18ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+                height="40%" width="40%">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q4" id="q4_op1" >
+              <label class="form-check-label" for="q4_op1">
+                Option1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q4" id="q4_op2">
+              <label class="form-check-label" for="q4_op2">
+                Option2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q4" id="q4_op3" >
+              <label class="form-check-label" for="q4_op3">
+                Option3
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q4" id="q4_op4">
+              <label class="form-check-label" for="q4_op4">
+                Option4
+              </label>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <div class="q5" id="q5">
+            Q5. This is 5th question
+          </div>
+          <div class="card-body">
+            <div class="card-body">
+              <img class="img-fluid img-thumbnail" id="q5_img"
+                src="https://images.unsplash.com/photo-1590845947667-381579052389?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2JsZW18ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+                height="40%" width="40%">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q5" id="q5_op1" >
+              <label class="form-check-label" for="q5_op1">
+                Option1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q5" id="q5_op2">
+              <label class="form-check-label" for="q5_op2">
+                Option2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q5" id="q5_op3" >
+              <label class="form-check-label" for="q5_op3">
+                Option3
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q5" id="q5_op4">
+              <label class="form-check-label" for="q5_op4">
+                Option4
+              </label>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <div class="q6" id="q6">
+            Q6. This is 6th question
+          </div>
+          <div class="card-body">
+            <div class="card-body">
+              <img class="img-fluid img-thumbnail" id="q6_img"
+                src="https://images.unsplash.com/photo-1590845947667-381579052389?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2JsZW18ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+                height="40%" width="40%">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q6" id="q6_op1" >
+              <label class="form-check-label" for="q6_op1">
+                Option1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q6" id="q6_op2">
+              <label class="form-check-label" for="q6_op2">
+                Option2
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q6" id="q6_op3" >
+              <label class="form-check-label" for="q6_op3">
+                Option3
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q6" id="q6_op4">
+              <label class="form-check-label" for="q6_op4">
+                Option4
+              </label>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <input type="submit" value="Submit test" class="btn button btn-outline-success" style="color: black;">
+        </div>
+
+      </form>
+      <!-- <button class="btn btn-primary" style="background-color: teal; color: #fff;padding: 0.5rem 2rem 0.5rem 2rem;" onclick="document.getElementById('formbody').submit()">Submit</button><br><br> -->
+    </div>
+  </div>
+
+  <script>
+    var deadline = new Date("May 16, 2022 20:00:00").getTime();
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var t = deadline - now;
+      var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((t % (1000 * 60)) / 1000);
+      document.getElementById("hour").innerHTML = hours;
+      document.getElementById("minute").innerHTML = minutes;
+      document.getElementById("second").innerHTML = seconds;
+      if(hours==0 && minutes<5){
+      if(seconds%2==0)
+      document.getElementById("clockdiv").style.backgroundColor="red";
+      else
+      document.getElementById("clockdiv").style.backgroundColor="black";
+      }
+      if (t < 0) {
+        clearInterval(x);
+        document.getElementById("clockdiv").innerHTML = "00:00:00";
+        document.getElementById("clockdiv").style.backgroundColor="red";
+        var n=6; //number of questions
+        var s="q";
+        for(let i=1;i<=n;i++){
+          var temp=s+i+"_op1";
+          console.log(temp)
+          document.getElementById(temp).disabled=true;
+          temp=s+i+"_op2";
+          document.getElementById(temp).disabled=true;
+          temp=s+i+"_op3";
+          document.getElementById(temp).disabled=true;
+          temp=s+i+"_op4";
+          document.getElementById(temp).disabled=true;
+        }
+        document.getElementById('formbody').submit()
+      }
+    }, 1000);
+  </script>
+
+</body>
+
+</html>

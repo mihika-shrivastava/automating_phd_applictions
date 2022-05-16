@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<title>List of Tests</title>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/testList.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container ">
+        <p class="h2">Test Details</p>
+        
+        <hr />
+        <br />
+        <p class="h3">Upcoming Tests</p>
+        <table class="table table-dark table-striped" id="test_future">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Test</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">Duration(in minutes)</th>
+                    <th scope="col">Creator</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>phd admission</td>
+                    <td>12-06-22</td>
+                    <td>4:00</td>
+                    <td>180</td>
+                    <td>Me</td>
+                    <td><button class="btn btn-outline-danger">Delete</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>phd admission</td>
+                    <td>10-06-22</td>
+                    <td>14:00</td>
+                    <td>180</td>
+                    <td>You</td>
+                    <td><button class="btn btn-outline-danger">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <br />
+        <p class="h3">Active Tests</p>
+        <table class="table table-dark table-striped" id="test_present">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Test</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">Ends in(minutes)</th>
+                    <th scope="col">Creator</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>phd admission</td>
+                    <td>10-06-22</td>
+                    <td>14:00</td>
+                    <td>
+                        <div id="clockdiv" class="timer d-flex">
+                            <div class="d-flex">
+                                <span class="hours " id="h1"></span>
+                                <div class="smalltext">hr</div>
+                            </div>
+                            <div class="d-flex">
+                                <span class="minutes" id="m1"></span>
+                                <div class="smalltext">min</div>
+                            </div>
+                            <div class="d-flex">
+                                <span class="seconds" id="s1"></span>
+                                <div class="smalltext">sec</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>You</td>
+                    <td><button class="btn btn-outline-danger">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br />
+        <hr />
+        <br />
+        <p class="h3">Expired Tests</p>
+        <table class="table table-dark table-striped" id="test_past">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Test</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">Duration(in minutes)</th>
+                    <th scope="col">Creator</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>phd admission</td>
+                    <td>12-06-22</td>
+                    <td>4:00</td>
+                    <td>180</td>
+                    <td>Me</td>
+                    <td><button class="btn btn-outline-danger">Delete</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>phd admission</td>
+                    <td>10-06-22</td>
+                    <td>14:00</td>
+                    <td>180</td>
+                    <td>You</td>
+                    <td><button class="btn btn-outline-danger">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <hr />
+        <br />
+
+        <script>
+            var deadline = new Date("May 17, 2022 18:00:00").getTime();
+            var x = setInterval(function () {
+                var now = new Date().getTime();
+                var t = deadline - now;
+                var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((t % (1000 * 60)) / 1000);
+                document.getElementById("h1").innerHTML = hours;
+                document.getElementById("m1").innerHTML = minutes;
+                document.getElementById("s1").innerHTML = seconds;
+                if (t < 0) {
+                    clearInterval(x);
+                    document.getElementById("clockdiv").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+</body>
+
+</html>

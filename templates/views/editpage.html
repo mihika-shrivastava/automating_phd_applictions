@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Edit Details</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/css/font-awesome.min.css') }}">
+</head>
+
+<body>
+
+  <!-- body-->
+  <h4>Edit Basic Details:</h4>
+  <div class="container" style="margin:20px">
+
+    <form action="/details_update" method="post">
+
+      <div class="mb-3">
+        <label for="username" class="form-label">UserName</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter your answer" required
+          pattern="^[a-zA-Z]+$" style="width:500px;" name="username" value="{{username}}" disabled>
+      </div>
+
+      <div class="mb-3">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="Enter your answer" required
+          pattern="^[a-zA-Z]+$" style="width:500px;" name="firstname" value="{{fname}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Enter your answer" required
+          pattern="^[a-zA-Z]+$" style="width:500px;" name="lastname" value="{{lname}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your answer" required
+          style="width:500px;" value="{{ email}}" name="email" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="contactnumber" class="form-label">Contact Number</label>
+        <input type="number" class="form-control" id="contactnumber" placeholder="Enter your answer" required
+          pattern="[1-9][0-9]{9}" style="width:500px;" name="contactnumber" value="{{phno}}">
+      </div>
+
+      <label for="Gender">Gender</label>
+      <div style="display:flex;margin-left: 150px;">
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="male" value="male" unchecked>
+          <label class="form-check-label" for="male"> Male</label>
+        </div>
+        <div class="form-check" style="margin-left: 10px;">
+          <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+          <label class="form-check-label" for="female"> Female</label>
+        </div>
+        <div class="form-check" style="margin-left: 10px;"></div>
+        <input class="form-check-input" type="radio" name="gender" id="others" value="others">
+        <label class="form-check-label" for="others">Others</label>
+      </div>
+
+      <div class="mb-3">
+        <label for="birthday" class="form-label">Birthday</label>
+        <input type="date" class="form-control" name="birthdate" id="birthday" min="1947-01-01" max="2006-01-01"
+          required style="width:500px;">
+      </div>
+
+      <label for="citizenship">Citizenship</label>
+      <div style="display:flex;margin-left: 150px;">
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="citizenship" id="indian" value="indian" unchecked>
+          <label class="form-check-label" for="indian">Indian</label>
+        </div>
+        <div class="form-check" style="margin-left: 10px;">
+          <input class="form-check-input" type="radio" name="citizenship" id="non-indian" value="non-indian">
+          <label class="form-check-label" for="non-indian">Non-Indian</label>
+        </div>
+      </div>
+
+      <label for="batch">Educational Qualification</label>
+      <div style="display:flex;margin-left: 150px;">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="edu" id="ug" value="ug" unchecked>
+          <label class="form-check-label" for="ug">Undergraduate</label>
+        </div>
+        <div class="form-check" style="margin-left: 10px;">
+          <input class="form-check-input" type="radio" name="edu" id="pg" value="pg">
+          <label class="form-check-label" for="pg">Postgraduate</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="institution" class="form-label">Institution Name</label>
+        <input type="text" class="form-control" id="institution" placeholder="Enter your answer" required
+          style="width:500px;" name="institution" value="{{inst}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="year" class="form-label">Graduation Year</label>
+        <input type="number" min="1950" max="2022" step="1" value="2021" class="form-control" id="year"
+          placeholder="Enter your answer" required style="width:500px;" name="year" value="{{year}}">
+      </div>
+
+      <button type="submit" class="btn btn-success">Save Changes</button>
+    </form>
+  </div>
+
+</body>
+
+</html>

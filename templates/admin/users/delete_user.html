@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin - Delete User</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}">-->
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <h2 id="admin-h2"><a href="{{ url_for('admin_render') }}">Admin</a></h2>
+        <a href="{{ url_for('list_users') }}">Users</a>
+        <a href="{{ url_for('create_user') }}">Create User</a>
+        <a href="{{ url_for('edit_user') }}">Edit User</a>
+    </div>
+
+    <div class="content">
+        {% if col == "red" %}
+        <p style="color:red">{{status}}</p>
+        {% else %}
+        <p style="color:green">{{status}}</p>
+        {% endif %}
+        <form action="/deleted_user" method="post">
+            <div class="form_element">
+                <label class="form_label">Username</label>
+                <br />
+                <input class="form_input" type="text" id="username" name="username" />
+            </div>
+            <div class="form_element">
+                <label class="form_label">Email address</label>
+                <br />
+                <input class="form_input" type="email" id="email" name="email" />
+            </div><br>
+            <button type="submit" class="btn_submit">Delete</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

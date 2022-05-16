@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<title>List of Tests</title>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/testList.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: black;">
+    <div class="container" style="background-color: white;margin-top:20px;margin-bottom:20px">
+        <div style="margin-top: 10px;">
+            <form>
+                <div class="mb-3">
+                    <label for="test_name" class="form-label">Name of the test</label>
+                    <input type="text" class="form-control" id="test_name">
+                </div>
+                <div class="mb-3">
+                    <label for="test_desc" class="form-label">Mention some line about the test</label>
+                    <textarea class="form-control" id="test_desc"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="test_start" class="form-label">Start time</label>
+                    <input type="datetime-local" class="form-control" id="test_start">
+                </div>
+                <div class="mb-3">
+                    <label for="test_end" class="form-label">End Time</label>
+                    <input type="datetime-local" class="form-control" id="test_end">
+                </div>
+                <div class="mb-3">
+                    <label for="no_questions" class="form-label">Number of questions in the test</label>
+                    <input type="number" class="form-control" id="no_questions" value="0">
+                </div>
+                <br />
+                <hr />
+                <br />
+                <!--
+            <div class="mb-3">
+                <label for="q1_desc" class="form-label"><b>Question desc</b></label>
+                <textarea class="form-control" id="q1_desc"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="q1_img" class="form-label">Image (if any)</label>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="img">Upload</label>
+                    <input type="file" class="form-control" id="img">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="q1_op1" class="form-label">Option1</label>
+                <input type="text" class="form-control" id="q1_op1">
+            </div>
+            <div class="mb-3">
+                <label for="q1_op2" class="form-label">Option2</label>
+                <input type="text" class="form-control" id="q1_op2">
+            </div>
+            <div class="mb-3">
+                <label for="q1_op3" class="form-label">Option3</label>
+                <input type="text" class="form-control" id="q1_op3">
+            </div>
+            <div class="mb-3">
+                <label for="q1_op4" class="form-label">Option4</label>
+                <input type="text" class="form-control" id="q1_op4">
+            </div>
+
+            <br/>
+            <div class="mb-3">
+                <label for="q1_ans" class="form-label">Answer of the question</label>
+                <input type="text" class="form-control" id="q1_ans">
+            </div>
+        -->
+                <div id="temp"></div>
+                <button type="submit" class="btn btn-success" style="margin:10px;float:right">Create</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        const interval = setInterval(function () {
+            var x = document.getElementById("no_questions").value;
+            console.log(x);
+            var temp = "";
+            for (let i = 1; i <= x; i++) {
+                temp +=
+                    '<div class="mb-3">' +
+                    '<label for="q' + i + '_desc" class="form-label"><h4><b>Question number ' + i + ' </b></h4></label>' +
+                    '<textarea class="form-control" id="q' + i + '_desc"></textarea>' +
+                    '</div>' +
+                    '<div class="mb-3">' +
+                    '<label for="q' + i + '_img" class="form-label">Image (if any)</label>' +
+                    '<div class="input-group mb-3">' +
+                    '<label class="input-group-text" for="q' + i + '_img">Upload</label>' +
+                    '<input type="file" class="form-control" id="q' + i + '_img">' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="mb-3">' +
+                    '<label for="q' + i + '_op1" class="form-label">Option1</label>' +
+                    '<input type="text" class="form-control" id="q' + i + '_op1">' +
+                    '</div>' +
+                    '<div class="mb-3">' +
+                    '<label for="q' + i + '_op2" class="form-label">Option2</label>' +
+                    '<input type="text" class="form-control" id="q' + i + '_op2">' +
+                    '</div>' +
+                    '<div class="mb-3">' +
+                    '<label for="q' + i + '_op3" class="form-label">Option3</label>' +
+                    '<input type="text" class="form-control" id="q' + i + '_op3">' +
+                    '</div>' +
+                    '<div class="mb-3">' +
+                    '<label for="q' + i + '_op4" class="form-label">Option4</label>' +
+                    '<input type="text" class="form-control" id="q' + i + '_op4">' +
+                    '</div>' +
+
+                    '<br/>' +
+                    '<div class="mb-3">' +
+                    '<label for="q' + i + '_ans" class="form-label">Answer of the question</label>' +
+                    '<input type="text" class="form-control" id="q' + i + '_ans">' +
+                    '</div> <hr/>' +
+                    '<br/>';
+            }
+            document.getElementById("temp").innerHTML = temp;
+        }, 2000);
+    </script>
+</body>
+
+</html>

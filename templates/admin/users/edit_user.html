@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin - Edit User</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}">
+</head>
+<!--value="{{username}}" readonly-->
+
+<body>
+
+    <div class="sidenav">
+        <h2 id="admin-h2"><a href="{{ url_for('admin_render') }}">Admin</a></h2>
+        <a href="{{ url_for('list_users') }}">Users</a>
+        <a href="{{ url_for('delete_user') }}">Delete User</a>
+    </div>
+
+    <div class="content">
+        <form action="#">
+            <div class="form_element">
+                <label class="form_label">Username</label>
+                <br />
+                <input class="form_input" value="{{username}}" readonly type="text" id="username" />
+            </div>
+            <div class="form_element">
+                <label class="form_label">Email address</label>
+                <br />
+                <input class="form_input" value="{{email}}" type="text" id="email" />
+            </div>
+            <div class="form_element">
+                <label class="form_label">Contact Number</label>
+                <br />
+                <input class="form_input" value="{{number}}" type="text" id="number" />
+            </div>
+            <div class="form_element">
+                <label class="form_label">Gender</label>
+                <br />
+                <div class="form_input" value="{{gender}}">
+                    <input class="form_input" type="radio" id="male" name="gender">
+                    <label class="form_input" for="male">Male</label>
+                    <input class="form_input" type="radio" id="male" name="gender">
+                    <label class="form_input" for="male">Female</label>
+                    <input class="form_input" type="radio" id="others" name="gender">
+                    <label class="form_input" for="female">Others</label>
+                </div>
+            </div>
+            <div class="form_element">
+                <label class="form_label">Date Of Birth</label>
+                <br />
+                <input class="form_input" value="{{dob}}" type="text" id="dob" placeholder="dd/mm/yyyy" />
+            </div>
+            <div class="form_element">
+                <label class="form_label">Citizenship</label>
+                <br />
+                <div class="form_input" value="{{citizenship}}">
+                    <input class="form_input" type="radio" id="indian" name="citizenship">
+                    <label class="form_input" for="indian">Indian</label>
+                    <input class="form_input" type="radio" id="non-indian" name="citizenship">
+                    <label class="form_input" for="non-indian">Non - Indian</label>
+                </div>
+            </div>
+            <div class="form_element">
+                <label class="form_label">Educational Qualification</label>
+                <br />
+                <div class="form_input" value="{{qualification}}">
+                    <input class="form_input" type="radio" id="ug" name="qualification">
+                    <label class="form_input" for="ug">Undergraduate</label>
+                    <input class="form_input" type="radio" id="pg" name="qualification">
+                    <label class="form_input" for="pg">Postgraduate</label>
+                </div>
+            </div>
+            <div class="form_element">
+                <label class="form_label">Institution Name</label>
+                <br />
+                <input class="form_input" value="{{institute_name}}" type="text" id="institute_name" />
+            </div>
+            <div class="form_element">
+                <label class="form_label">Graduation Year</label>
+                <br />
+                <input class="form_input" value="{{graduation_year}}" type="text" id="graduation_year" min="1950"
+                    max="2022" step="1" />
+            </div>
+            <button type="submit" class="btn_submit">Submit</button>
+
+        </form>
+        <br>
+    </div>
+
+</body>
+
+</html>
