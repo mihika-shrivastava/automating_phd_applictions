@@ -3,63 +3,36 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Register</title>
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/login2.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/css/font-awesome.min.css') }}">
 </head>
 
 <body>
-  <!-- navbar -->
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark row-4 " style="height:80px">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">student</a>
-          </li>
-          <div class="dropdown">
-            <span class="fa fa-flickr"></span>
-            <div class="dropdown-content">
-              <a href="#" style="color:black;text-decoration:none">Profile</a>
-              <br />
-              <a href="" # style="color:black;text-decoration:none">Edit</a>
-              <br />
-              <hr style="color:black" />
-              <a href="#" style="color:black;text-decoration:none">Logout</a>
-            </div>
-          </div>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
+
   <!-- body-->
   <h4>Enter basic Details:</h4>
   <div class="container" style="margin:20px">
     <form action="/details" method="post">
+      
       <div class="mb-3">
         <label for="firstname" class="form-label">First Name</label>
         <input type="text" class="form-control" id="firstname" placeholder="Enter your answer" required
-          style="width:500px;" name="firstname">
+               pattern="^[a-zA-Z]+$"  
+               style="width:500px;" name="firstname">
       </div>
+      
       <div class="mb-3">
         <label for="lastname" class="form-label">Last Name</label>
         <input type="text" class="form-control" id="lastname" placeholder="Enter your answer" required
-          style="width:500px;" name="lastname">
+               pattern="^[a-zA-Z]+$"  
+               style="width:500px;" name="lastname">
       </div>
+      
       <div class="mb-3">
         <label for="email" class="form-label">E-mail address</label>
         <input type="email" class="form-control" id="email" placeholder="Enter your answer" required
@@ -68,7 +41,8 @@
       <div class="mb-3">
         <label for="contactnumber" class="form-label">Contact Number</label>
         <input type="text" class="form-control" id="contactnumber" placeholder="Enter your answer" required
-          style="width:500px;" name="contactnumber">
+               pattern="[1-9][0-9]{9}" 
+               style="width:500px;" name="contactnumber">
       </div>
 
       <label for="Gender">Gender</label>
@@ -89,7 +63,7 @@
 
       <div class="mb-3">
         <label for="birthday" class="form-label">Birthday</label>
-        <input type="date" class="form-control" name="birthdate" id="birthday" required style="width:500px;">
+        <input type="date" class="form-control" name="birthdate" id="birthday" min="1947-01-01" max="2006-01-01" required style="width:500px;">
       </div>
 
       <label for="citizenship">Citizenship</label>
@@ -122,8 +96,6 @@
           style="width:500px;" name="institution">
       </div>
 
-      <!--<input type="number" min="1900" max="2099" step="1" value="2016" />-->
-
       <div class="mb-3">
         <label for="year" class="form-label">Graduation Year</label>
         <input type="number" min="1950" max="2022" step="1" value="2021" class="form-control" id="year"
@@ -133,16 +105,7 @@
       <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>
-  <!--fotter-->
-  <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">
-    <div class="col-md-10 d-flex align-items-center justify-content-center" style="margin-left:10px">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"> home
-      </a>
-      <span class="text-muted">© 2021 Company, Inc</span>
-    </div>
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-    </ul>
-  </footer> -->
+  
 </body>
 
 </html>
