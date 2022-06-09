@@ -1,7 +1,7 @@
 # automating_phd_applictions
 step 1
 ```
-git clone
+git clone https://github.com/mihika-shrivastava/automating_phd_applictions.git
 ```
 
 step 2
